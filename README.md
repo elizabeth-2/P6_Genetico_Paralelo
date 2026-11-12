@@ -86,6 +86,39 @@ En las pruebas realizadas:
 
 Los resultados deben interpretarse considerando que el modelo MPI utiliza poblaciones independientes, por lo que el trabajo total aumenta con el número de islas.
 
+## Análisis de rendimiento paralelo
+
+Se agregaron dos métricas para complementar la evaluación de los métodos implementados.
+
+### Speedup
+
+Permite comparar el tiempo de ejecución secuencial con los tiempos obtenidos mediante Joblib y MPI.
+
+Se calcula mediante la siguiente expresión:
+
+Speedup = Tiempo secuencial / Tiempo paralelo
+
+Los resultados muestran que Joblib con 8 procesos obtuvo un Speedup aproximado de 1.69, mientras que MPI con 8 islas obtuvo 0.59.
+
+Gráfica generada: `speedup.png`.
+
+### Eficiencia paralela
+
+Permite analizar el aprovechamiento de los procesos utilizados en cada configuración.
+
+Se calcula mediante:
+
+Eficiencia = (Speedup / Número de procesos) * 100
+
+Los resultados permiten observar cómo cambia la eficiencia al incrementar el número de procesos.
+
+Gráfica generada: `eficiencia_paralela.png`.
+
+### Archivos adicionales
+
+- `analisis_rendimiento.py`: cálculo y generación de la gráfica de Speedup.
+- `eficiencia_paralela.py`: cálculo y generación de la gráfica de eficiencia.
+
 ## Autoría
 
 Proyecto académico P6.
